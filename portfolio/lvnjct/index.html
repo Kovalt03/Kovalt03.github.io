@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<title>김민제 — 포트폴리오</title>
+<meta name="description" content="빠르게 배우고 과감히 도전하지만, 원칙과 안정성은 지킵니다 — 개발자 김민제의 포트폴리오">
+<meta property="og:type" content="website">
+<meta property="og:title" content="김민제 — 포트폴리오">
+<meta property="og:description" content="빠르게 배우고 과감히 도전하지만, 원칙과 안정성은 지킵니다 — 새로운 아이디어와 넓은 시야로 문제를 풀어내는 개발자">
+<meta property="og:url" content="https://kovalt03.github.io/portfolio/lvnjct/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232F5D50'/%3E%3Ctext x='16' y='22.5' font-size='17' font-weight='700' text-anchor='middle' fill='%23fff' font-family='system-ui,sans-serif'%3EMJ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="../style.css" rel="stylesheet">
+</head>
+<body>
+<div class="wrap" id="app"></div>
+
+<script>
+/* ============================================================
+   이 버전의 내용. 이 객체만 채우면 됩니다.
+   빈 문자열이나 빈 배열로 두면 그 줄 또는 섹션이 통째로 빠집니다.
+   ============================================================ */
+window.profile = {
+  name: "김민제",
+  headline: "빠르게 배우고 과감히 도전하지만, 원칙과 안정성은 지킵니다",   // 줄바꿈은 화면 폭에 맞춰 자동
+  tagline: "새로운 아이디어와 넓은 시야로 문제를 풀어내는 개발자",
+  photo: "",                // 예: "../assets/me.jpg". 비우면 사진 칸 없이 표시
+
+  education: {
+    university: "한양대학교 컴퓨터소프트웨어학부 · 2021.03\u00a0–\u00a02027.02 (졸업\u00a0예정)",
+    gpa: "4.06 / 4.5",
+    highschool: "제주과학고등학교 · 2019.03\u00a0–\u00a02021.02 (조기졸업)"
+  },
+  certificates: ["정보처리기사 · 2026.09"],   // 히어로 학력 아래 "자격" 줄
+  languages: ["OPIc IM2"],  // 히어로 "어학" 줄. 취득 연월을 붙여도 됨
+
+  // 섹션 순서. 프로젝트를 앞세우려면 ["skills", "projects", "experience", "about"]
+  order: ["skills", "experience", "projects", "about"],
+
+  links: [
+    { label: "GitHub", href: "https://github.com/Kovalt03", icon: "github" },
+    { label: "velog",  href: "https://velog.io/@loloy", icon: "velog" }
+    // { label: "이력서 PDF", href: "" }   // TODO 이력서 올리면 추가
+  ],
+
+  // primary: true 면 색이 채워진 배지(주력)
+  skills: [
+    { group: "언어", items: [
+      { name: "C++/C", primary: true }, { name: "Java", primary: true },
+      { name: "JavaScript" }, { name: "Python" }, { name: "Shell Script" }
+    ] },
+    { group: "백엔드", items: [
+      { name: "Spring Boot", primary: true }, { name: "JPA", primary: true },
+      { name: "PostgreSQL", primary: true }, { name: "Redis", primary: true },
+      { name: "Kafka" }, { name: "STOMP/WebSocket" }
+    ] },
+    { group: "협업", items: [
+      { name: "Git", primary: true }, { name: "GitHub Actions" }, { name: "Jenkins" },
+      { name: "Jira" }, { name: "Confluence" }
+    ] },
+    { group: "AI 개발", items: [
+      { name: "Claude Code", primary: true }, { name: "Codex", primary: true }
+    ] },
+    { group: "시스템", items: [
+      { name: "Linux Kernel" }, { name: "Docker" }, { name: "Vulkan" },
+      { name: "GLSL" }, { name: "CMake" }
+    ] }
+  ],
+
+  experience: [
+    {
+      company: "삼성전자 DS", role: "장기현장실습생 (인턴사원)",
+      period: "2025.09 – 2025.12", team: "System LSI사업부 Mobile AP SW 개발팀",
+      metric: { before: "", after: "", caption: "" },   // 숫자로 보여줄 성과가 생기면
+      details: [
+        { label: "한 일", text: "Ray Tracing·Ray Query Feature 검증을 위한 Vulkan 기반 Test Scene과 프로그램을 개발하고, 실제 GPU HW의 Memory Dump 인코딩·분석을 자동화했습니다. 또한 AMD Radeon Ray Tracing Analyzer를 사내 GPU 사양에 맞게 쓸 수 있도록 BVH Parser를 개발해 연동했습니다." },
+        { label: "문제 해결", text: "AMD가 소스 코드만 주고 사용법이 없어 아무도 쓰지 못하던 GLSL(GPU 셰이더 언어) 디버거를 분석해, 실행 흐름과 사용법을 파악하고 다시 동작시켰습니다. 이를 활용해 GLSL을 CPU 환경에서 실행하고, Visual Studio에서 Breakpoint와 변숫값, Memory 상태를 확인하며 GPU Shader를 단계적으로 분석했습니다." },
+        { label: "기여", text: "만든 도구들은 팀원들이 GPU Runtime의 기능을 검증하고 문제를 디버깅하는 데 실제로 쓰였습니다." },
+        { label: "협업 방식", text: "Git으로 코드를 관리하고, Jira로 작업을 나눠 추적하고, Confluence에 설계와 결과를 정리하는 애자일 방식으로 일했습니다. 변경은 Jenkins와 GitHub 기반 CI/CD 위에서 검증했습니다." },
+        { label: "배운 것", text: "GPU 레이 트레이싱이 하드웨어와 소프트웨어 사이에서 어떻게 동작하는지, 그리고 여러 사람이 하나의 코드베이스를 다룰 때 CI/CD와 문서가 왜 필요한지를 실무에서 익혔습니다." }
+      ]
+    }
+  ],
+
+  projects: [
+    {
+      title: "픽셀 경매 · 사이버 영토 전쟁",
+      summary: "동시성이 핵심인 경매를 게임으로 만들고, 모놀리식에서 12개 서비스로 직접 전환한 프로젝트",
+      image: "../assets/auction-main.jpg",
+      details: [
+        { label: "기간과 규모", text: "2026.04 – 2026.09 · 개인 프로젝트 · 모놀리식 구현(04–08) → MSA 전환(08–09)" },
+        { label: "목표", text: "모놀리식에서 MSA로 전환하는 과정을 직접 겪어 보기 위해, 입찰이 동시에 몰려도 포인트와 낙찰 결과가 틀어지면 안 되는 경매를 실시간 전략 게임으로 구현했습니다." },
+        { label: "개발 방식", text: "Claude Code와 Codex가 같은 규칙 문서(CLAUDE.md·AGENTS.md)를 따르도록 하네스를 직접 설계하고, 설계·구현·리뷰·테스트 에이전트의 역할과 쓰기 권한을 나눴습니다. 테스트 작성을 구현과 분리해 구현자의 가정이 검증 코드에 복제되지 않게 했고, 모놀리식 단계에서는 규칙 위반과 테스트 누락을 훅으로 자동 점검했습니다. 핵심 로직은 직접 구현하고, 반복적인 코드와 리뷰·프론트엔드는 에이전트에게 맡겼습니다." },
+        { label: "성능", text: "캐시 stampede 방지와 gzip으로 맵 전체 응답 p95를 1,115ms에서 248ms로 77.8% 줄였고, ETag 조건부 조회를 더한 1시간 장시간 부하 테스트에서는 요청 71,665건을 DB 연결·메모리 누수 없이 모두 처리했습니다. 인기 경매 하나에 가상 사용자 400명이 몰리면 p95가 1.6초까지 늘어나는 한계도 확인해, 경매를 MSA 전환의 첫 분리 대상으로 정했습니다." },
+        { label: "MSA 전환", text: "모놀리식을 운영하면서 한 서비스씩 떼어내는 Strangler 방식으로, 경매부터 시작해 게이트웨이·실시간 허브를 포함한 12개 서비스로 나누고 모놀리식을 폐기했습니다. 서비스마다 DB를 분리하고, 동기 호출은 내부 API 계약, 유실되면 안 되는 이벤트는 Kafka, 저지연 실시간 알림은 Redis로 역할을 나눴습니다. 맵의 '경매중' 표시는 이벤트로 갱신되는 읽기 모델로 바꿔, 입찰이 몰리는 동안에도 맵 조회 p99를 약 10배 개선했습니다." },
+        { label: "문제 해결", text: "· 동시성 결함: 정적 리뷰와 단위 테스트로는 못 잡은 결함을 부하 후 정합성 검증에서 찾았습니다. 게임 포인트(AP)가 음수인 지갑 40개가 나왔고, 락이 경매 단위라 서로 다른 경매가 같은 지갑을 동시에 고치면 덮어써진 것이 원인이었습니다. 락 기준을 사용자 지갑으로 바꿔 0건으로 만들었습니다.\n· Kafka 장애: 브로커가 멈추면 이미 커밋된 입찰에도 500 응답이 나가고 이벤트가 사라질 수 있었습니다. 트랜잭셔널 아웃박스로 유실 없이 다시 보내게 하고, 받는 쪽에서 중복 전달을 걸러냈습니다.\n· 정산 실패 전파: 정산 배치 전체가 한 트랜잭션이라 한 건만 실패해도 모두 되돌려졌습니다. 경매 건당 트랜잭션과 재시도 상한(5회)으로 실패를 격리했습니다." }
+      ],
+      links: [
+        { label: "저장소 · MSA", href: "https://github.com/Kovalt03/Territorial_Auction_MSA" },
+        { label: "저장소 · 모놀리식", href: "https://github.com/Kovalt03/Territorial_Auction" },
+        { label: "소개 · 사용자 가이드", href: "https://kovalt03.github.io/my-blog/#/post/territorial-auction" },
+        { label: "velog · 동시성 제어", href: "https://velog.io/@loloy/13.-%EB%B0%B1%EC%97%94%EB%93%9C-%EB%8F%99%EC%8B%9C%EC%84%B1-%EC%A0%9C%EC%96%B4%EC%9D%98-%EB%AA%A8%EB%93%A0-%EA%B2%83-CPU-%EB%A0%88%EB%B2%A8%EB%B6%80%ED%84%B0-%EB%B6%84%EC%82%B0-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EA%B9%8C%EC%A7%80" },
+        { label: "velog · 부하 테스트", href: "https://velog.io/@loloy/16.-%EB%B6%80%ED%95%98-%ED%85%8C%EC%8A%A4%ED%8A%B8-TPS%EA%B0%80-%EC%95%84%EB%8B%88%EB%9D%BC-%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%9D%98-%ED%95%9C%EA%B3%84%EC%99%80-%EC%A0%95%ED%95%A9%EC%84%B1%EC%9D%84-%EC%B0%BE%EB%8A%94-%EA%B3%BC%EC%A0%95" }
+      ]
+    },
+    {
+      title: "FMTC · 음악 취향 기반 공연 추천",
+      summary: "Spotify 청취 기록과 AI로 취향을 분석해 공연을 추천하는 서비스",
+      image: "../assets/fmtc-recommend.jpg",
+      details: [
+        { label: "기간과 규모", text: "2025.12 – 2026.03 · 3명 · 백엔드 · 팀장(PM)" },
+        { label: "목표", text: "좋아하는 가수의 공연도 직접 찾아보지 않으면 놓치기 쉽습니다. Spotify 청취 기록으로 취향을 파악하고, 출연진·장르 정보가 부족한 공연예술통합전산망(KOPIS) 데이터는 AI로 보완해 취향에 맞는 공연을 추천하는 것이 목표였습니다." },
+        { label: "맡은 일", text: "Spotify OAuth 가입과 JWT 로그인·토큰 재발급을 구현했습니다. Spotify 토큰은 암호화해 저장하고, 가입 도중의 상태는 Redis로 검증했습니다. AI로 가수의 장르를 추출하는 기능도 맡았습니다." },
+        { label: "문제 해결", text: "Spotify 앱 토큰 발급 메서드 전체에 synchronized가 걸려 있어, 유효한 토큰이 이미 있어도 모든 요청이 한 줄로 대기했습니다. 캐시된 토큰은 락 없이 바로 반환하고 갱신할 때만 동기화 블록에 들어가는 double-checked locking으로 바꿔 불필요한 대기를 없앴습니다. 흩어져 있던 에러 처리는 Enum 기반 공통 핸들러로 통합하고, 로그인 실패 시 아이디와 비밀번호 중 무엇이 틀렸는지 드러나지 않게 고쳤습니다." },
+        { label: "팀 운영", text: "커밋·브랜치 규칙을 검사하는 GitHub Actions CI를 먼저 구축하고, main에는 dev를 거쳐서만 병합되게 막았습니다. CI 확인 전에 병합되는 일이 생기자, CI 통과를 병합 조건으로 걸어 규칙이 지켜지도록 강제했습니다." },
+        { label: "결과", text: "약 2개월 동안 Spotify 가입부터 취향 분석, 공연 추천까지 로컬 환경에서 동작하는 MVP를 완성했습니다." },
+        { label: "돌아보면", text: "기능 구현을 앞세우다 보니 테스트를 충분히 쌓지 못했고, 초기에는 빌드 오류를 피하려고 기본 테스트를 꺼 둔 채 넘어가기도 했습니다. 이후 프로젝트에서는 테스트를 구현과 분리해 따로 작성하는 방식으로 바꿨습니다." }
+      ],
+      links: [ { label: "저장소", href: "https://github.com/FMTCs/AlertConcert-backend" } ]
+    },
+    {
+      title: "ZNS SSD용 LSM-Tree Device Mapper",
+      summary: "순차 쓰기만 되는 ZNS SSD 위에서 ext4가 동작하게 하는 LSM-Tree 기반 리눅스 커널 모듈 · 졸업 프로젝트",
+      image: "../assets/zns-architecture.svg",
+      details: [
+        { label: "기간과 규모", text: "2026.03 – 진행 중 · 2명 · 설계는 함께, 구현은 각자" },
+        { label: "배경", text: "졸업 프로젝트 「엣지 컴퓨팅을 위한 동적 플랫폼(Apache Kafka)과 ZNS SSD 호환을 위한 리눅스 커널 블록 계층 개발」의 블록 계층 부분입니다. ZNS SSD는 zone마다 정해진 순서로만 쓸 수 있어서, 임의 위치에 쓰는 ext4 같은 일반 파일시스템을 그대로 올릴 수 없습니다." },
+        { label: "접근", text: "Device Mapper 타깃이 위로는 일반 블록 디바이스처럼 보이고, 아래로는 항상 zone의 write pointer 순서대로만 쓰게 했습니다. 논리 주소와 물리 위치의 매핑은 RocksDB 같은 저장 엔진이 쓰는 LSM-Tree(memtable·WAL·SSTable)로 관리하고, compaction과 GC로 공간을 회수하며, WAL 재생으로 크래시 이후 상태를 복원합니다." },
+        { label: "문제 해결", text: "여러 비동기 쓰기가 같은 zone에 몰리면 배정된 순서와 실제로 디바이스에 나가는 순서가 어긋날 수 있었습니다. 배정 위치(wp)와 실제 전송 위치(dispatch_wp)를 따로 추적하고, zone별 전송 순서를 강제하는 dispatch gate를 두어 해결했습니다. 또 매핑을 WAL에 먼저 남긴 뒤에만 데이터를 쓰게 해, 어느 시점에 크래시가 나도 매핑을 먼저 복구할 수 있게 했습니다." },
+        { label: "진행 상황", text: "구현을 마치고 부하 상황의 안정성과 성능을 검증하고 있습니다. GC 중 공간 부족, WAL 공간 고갈처럼 부하에서만 드러나는 문제를 재현해 고치고, GC·compaction·WAL 복구 회귀 테스트를 추가했습니다." }
+      ],
+      links: [
+        { label: "저장소 · 본인 구현 브랜치", href: "https://github.com/ZnsCapstone/dm-zns-base/tree/zns_dm/Kovalt03" },
+        { label: "velog · LSM 논문 리뷰", href: "https://velog.io/@loloy/%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0-LSM-based-Storage-Techniques-A-Survey" }
+      ]
+    },
+    {
+      title: "GPU Runtime Simulator",
+      summary: "가상 ISA와 런타임을 직접 만들고, 그 위에서 래스터라이저와 레이 트레이서를 돌리는 C++ 시뮬레이터",
+      images: [
+        "../assets/gpurt-mirror.png", "../assets/gpurt-mirror.gif",
+        "../assets/gpurt-throw.gif", "../assets/gpurt-cube.gif"
+      ],
+      details: [
+        { label: "기간과 규모", text: "2026.07 – 2026.08 · 개인 프로젝트" },
+        { label: "목표", text: "레이 트레이싱이 병렬 하드웨어에서 왜 비싼지, 가속 구조나 스레드 재정렬이 실제로 얼마나 아껴 주는지를 가정이 아니라 숫자로 확인하고 싶었습니다." },
+        { label: "접근", text: "SIMT 실행 모델, 45개 명령어의 가상 ISA, 런타임 API를 처음부터 구현했습니다. 래스터라이저와 레이 트레이서를 같은 머신 위의 커널로 작성하고, 서로 다른 계산으로 그린 두 결과가 픽셀 단위로 같은지 비교해 검증했습니다." },
+        { label: "측정", text: "작은 삼각형 16개를 그리는 64×32 장면에서 타일 비닝과 공유 메모리 스테이징으로 래스터 작업량을 95.8% 줄였습니다. BVH는 삼각형 4,096개 장면에서 작업을 16.4배 줄이는 대신 스레드 분기(divergence)를 16.5%에서 85.1%로 늘린다는 것도 함께 측정했습니다." }
+      ],
+      links: [
+        { label: "저장소", href: "https://github.com/Kovalt03/GPU_Runtime" },
+        { label: "velog · GPURT Simulator", href: "https://velog.io/@loloy/GPURT-Simulator" }
+      ]
+    }
+  ],
+
+  about: [
+    { heading: "잘하는 것", text: "새로운 분야도 빠르게 이해하고 습득하며, 새로운 환경에 잘 적응합니다. 그래서 처음 맡는 일도 금방 배워 제 몫을 해냅니다. 꼼꼼한 성격이라 맡은 일과 주변을 잘 챙기고, 사람들과 빨리 가까워지는 편이라 새로운 팀이나 그룹에서도 자연스럽게 소통하며 어울립니다." },
+    { heading: "보완하고 있는 것", text: "스스로 세운 기준이 높고, 흥미로운 문제를 만나면 한 분야에 깊이 빠져드는 편이라 시간을 과하게 쓰곤 합니다. 그래서 일을 시작할 때 목표를 먼저 정해 두고, 맡은 일을 우선 끝낸 뒤 남는 시간에 추가 작업을 하는 순서를 지키려 합니다." },
+    { heading: "일할 때 지키는 것", text: "사람은 실수한다는 전제로 일합니다. 개인의 주의력에 기대기보다, 실수해도 걸러지는 구조와 애초에 실수하기 어려운 환경을 먼저 만듭니다. 규칙은 문서로만 두지 않고 자동 점검과 CI로 강제하고, 테스트는 구현과 분리된 관점에서 작성해 같은 가정이 코드와 테스트에 함께 들어가지 않게 합니다.\n코드도 같은 기준으로 씁니다. 함께 일하는 사람이 쉽게 읽고, 잘못 쓰기 어려운 코드를 지향합니다. 책임을 분리해 한 곳의 변경이 다른 곳으로 번지지 않게 하고, 경계를 넘을 때는 정해진 인터페이스로만 소통하게 해 여러 사람이 동시에 작업해도 서로를 깨뜨리지 않게 합니다." }
+  ],
+
+  email: "kalswp2003@naver.com",   // 히어로 "메일" 줄
+  phone: "",                // 히어로 "전화" 줄. 예: "010-0000-0000". 비우면 줄이 빠짐
+
+  labels: {
+    skills: "기술 스택",
+    experience: "인턴 경험",
+    projects: "프로젝트",
+    about: "어떤 사람인가",
+    skillNote: "색이 채워진 것은 주력, 테두리만 있는 것은 써본 정도입니다."
+  }
+};
+</script>
+<script src="../render.js"></script>
+</body>
+</html>

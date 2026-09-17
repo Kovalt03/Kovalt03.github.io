@@ -1,0 +1,158 @@
+:root{
+  --paper:#E8EAE7;
+  --card:#FFFFFF;
+  --ink:#171A18;
+  --muted:#5F6763;
+  --rule:#D2D6D2;
+  --accent:#2F5D50;
+  --accent-soft:#DDE5E1;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:'Pretendard Variable',Pretendard,system-ui,sans-serif;
+  background:var(--paper);color:var(--ink);
+  font-size:16px;line-height:1.7;letter-spacing:-0.01em;word-break:keep-all;overflow-wrap:anywhere;text-wrap:pretty;
+  padding:0 1.5rem 6rem;
+}
+.wrap{max-width:44rem;margin:0 auto}
+a{color:inherit;text-decoration:none}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+.topbar{display:flex;justify-content:space-between;align-items:baseline;padding:1.75rem 0;font-size:.875rem}
+.topbar .mark{font-weight:600;letter-spacing:-0.02em}
+.topbar nav{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem;color:var(--muted)}
+.topbar nav a:hover{color:var(--accent)}
+
+.hero{display:flex;gap:1.75rem;align-items:flex-start;padding:2.5rem 0 3rem}
+.avatar{
+  width:7.5rem;height:7.5rem;flex:none;border-radius:4px;
+  background:var(--accent-soft);color:var(--accent);
+  display:grid;place-items:center;object-fit:cover;
+  font-size:1.5rem;font-weight:600;letter-spacing:-0.02em;
+}
+.hero>div:last-child{flex:1;min-width:0}
+.hero h1{font-size:2rem;font-weight:600;letter-spacing:-0.035em;line-height:1.25;text-wrap:balance}
+.tagline{font-size:1.0625rem;color:var(--muted);margin-top:.5rem}
+.facts{margin-top:1.5rem;display:grid;gap:.4rem;font-size:.9375rem}
+.facts>div{display:flex;gap:.875rem}
+.facts dt{flex:none;width:3rem;color:var(--muted);font-size:.8125rem;padding-top:.15rem}
+.facts .sub{display:block;color:var(--muted);font-size:.875rem}
+.nowrap{white-space:nowrap}
+.facts a{border-bottom:1px solid var(--rule)}
+.facts a:hover{color:var(--accent);border-color:var(--accent)}
+.links{display:flex;flex-wrap:wrap;gap:1.25rem;margin-top:1.75rem;font-size:.9375rem}
+.links a{border-bottom:1px solid var(--rule);padding-bottom:1px}
+.links a:hover{color:var(--accent);border-color:var(--accent)}
+.links{align-items:center}
+.links .icon-link{display:inline-flex;border:0;padding:0;color:var(--muted);transition:color .15s ease}
+.links .icon-link svg{width:1.5rem;height:1.5rem}
+.links .icon-link:hover{color:var(--accent)}
+
+section{border-top:1px solid var(--rule);padding:3rem 0}
+section h2{font-size:1.125rem;font-weight:600;letter-spacing:-0.02em;margin-bottom:1.75rem}
+
+.skillgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));gap:1.5rem}
+.skillgrid h3{font-size:.8125rem;font-weight:500;color:var(--muted);margin-bottom:.625rem}
+.tags{display:flex;flex-wrap:wrap;gap:.375rem}
+.tag{font-family:'IBM Plex Mono',monospace;font-size:.75rem;padding:.2rem .5rem;border-radius:3px;background:var(--accent-soft);color:var(--accent)}
+.tag.light{background:none;border:1px solid var(--rule);color:var(--muted)}
+.note{font-size:.8125rem;color:var(--muted);margin-top:1rem}
+
+.role{font-size:1.25rem;font-weight:600;letter-spacing:-0.025em}
+.period{font-family:'IBM Plex Mono',monospace;font-size:.8125rem;color:var(--muted);margin-top:.25rem}
+.entry + .entry{margin-top:2.5rem;padding-top:2.5rem;border-top:1px solid var(--rule)}
+.metric{margin:1.75rem 0;padding:1.25rem 1.5rem;background:var(--card);border-radius:4px;display:flex;align-items:baseline;gap:.75rem;flex-wrap:wrap}
+.metric b{font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:2.75rem;line-height:1;letter-spacing:-0.04em;color:var(--accent);font-variant-numeric:tabular-nums}
+.metric .from{font-family:'IBM Plex Mono',monospace;font-size:1.125rem;color:var(--muted);text-decoration:line-through;text-decoration-thickness:1px}
+.metric small{font-size:.875rem;color:var(--muted);width:100%}
+.detail{display:grid;gap:1rem}
+.period + .detail{margin-top:1.5rem}
+.bullets{list-style:none;display:grid;gap:.625rem}
+.bullets li{position:relative;padding-left:.875rem}
+.bullets li::before{content:"";position:absolute;left:0;top:.7em;width:.3rem;height:.3rem;border-radius:50%;background:var(--accent)}
+.bullets b{font-weight:600;margin-right:.15rem}
+.detail>div{display:flex;gap:1rem}
+.detail dt{flex:none;width:4.5rem;color:var(--muted);font-size:.8125rem;padding-top:.2rem}
+.detail dd{flex:1;min-width:0;font-size:.9375rem}
+
+/* 프로젝트: 기본은 카드 격자, .is-open 이면 목록 + 아래 상세 패널 */
+.pcards{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(18rem,1fr));gap:1rem}
+.pcard{
+  font:inherit;color:inherit;text-align:left;cursor:pointer;
+  width:100%;height:100%;padding:0;border:0;border-radius:4px;
+  background:var(--card);display:flex;flex-direction:column;overflow:hidden;
+  transition:box-shadow .18s ease;
+}
+@media (hover:hover){
+  .pcard:hover{box-shadow:0 0 0 1px var(--accent)}
+  .pcard:hover .ptitle{color:var(--accent)}
+}
+.pcard:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.pthumb{
+  display:grid;place-items:center;aspect-ratio:16/10;overflow:hidden;
+  background:var(--accent-soft);color:var(--accent);
+  font-family:'IBM Plex Mono',monospace;font-size:.8125rem;
+}
+.pthumb img{width:100%;height:100%;object-fit:cover}
+.pthumb.multi{position:relative;background:var(--ink)}
+.pgrid{position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);aspect-ratio:1;display:grid;grid-template:1fr 1fr / 1fr 1fr;gap:2px}
+.pgrid img{width:100%;height:100%;min-height:0;object-fit:cover}
+.ptext{display:block;padding:1rem 1.125rem 1.25rem}
+.ptitle{display:block;font-size:1.0625rem;font-weight:600;letter-spacing:-0.02em}
+.psum{display:block;font-size:.875rem;color:var(--muted);margin-top:.25rem}
+.pcard .chev{display:none}
+
+.is-open .pcards{grid-template-columns:1fr;gap:0;border-top:1px solid var(--rule)}
+.is-open .pcard,.is-open .pcard:hover{
+  flex-direction:row;align-items:baseline;gap:1rem;
+  background:none;border-radius:0;border-bottom:1px solid var(--rule);box-shadow:none;
+  padding:.875rem .25rem;
+}
+.is-open .pthumb{display:none}
+.is-open .ptext{flex:1;min-width:0;padding:0;display:flex;align-items:baseline;gap:.875rem}
+.is-open .ptitle{flex:none;font-size:.9375rem}
+.is-open .psum{margin:0;font-size:.8125rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.is-open .pcard .chev{display:block;flex:none;color:var(--muted);font-size:.8125rem;transition:transform .18s ease}
+.pcard.active,.pcard.active:hover{box-shadow:inset 2px 0 0 var(--accent);padding-left:1rem}
+.pcard.active .ptitle{color:var(--accent)}
+.pcard.active .chev{transform:rotate(90deg);color:var(--accent)}
+
+.ppanel{margin-top:1.5rem;padding:2rem;background:var(--card);border-radius:4px;view-transition-name:ppanel}
+.ppanel-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:1.5rem}
+.ppanel-head h3{font-size:1.5rem;font-weight:600;letter-spacing:-0.03em;line-height:1.3}
+.ppanel-head p{font-size:.9375rem;color:var(--muted);margin-top:.35rem}
+.pclose{
+  flex:none;font:inherit;font-size:.8125rem;color:var(--muted);cursor:pointer;
+  background:none;border:1px solid var(--rule);border-radius:3px;padding:.3rem .75rem;
+}
+.pclose:hover{color:var(--accent);border-color:var(--accent)}
+.detail>.linkrow{margin-top:.5rem;padding-top:1.25rem;border-top:1px solid var(--rule)}
+.repo{display:flex;flex-wrap:wrap;gap:.5rem 1.25rem;font-size:.875rem}
+.repo a{border-bottom:1px solid var(--rule);padding-bottom:1px}
+.repo a:hover{color:var(--accent);border-color:var(--accent)}
+
+/* 카드 ↔ 목록 전환 애니메이션 (View Transitions 지원 브라우저만). 글자가 늘어나 보이지 않게 잘라서 보여줌 */
+::view-transition-group(*){animation-duration:.3s;animation-timing-function:cubic-bezier(.2,.7,.2,1)}
+::view-transition-old(*),::view-transition-new(*){height:100%;object-fit:none;object-position:left top}
+
+.about{display:grid;gap:1.75rem}
+.about h3{font-size:.9375rem;font-weight:600;margin-bottom:.5rem}
+.about p{font-size:.9375rem;color:var(--muted)}
+
+
+@media (max-width:640px){
+  body{padding:0 1.25rem 4rem}
+  .topbar{flex-direction:column;gap:.5rem;padding:1.25rem 0}
+  .topbar nav{gap:.25rem 1rem;font-size:.8125rem}
+  .hero{flex-direction:column;gap:1.5rem;padding:1.5rem 0 2.5rem}
+  .avatar{width:5.5rem;height:5.5rem;font-size:1.125rem}
+  .hero h1{font-size:1.625rem}
+  .metric b{font-size:2.25rem}
+  .detail>div,.facts>div{flex-direction:column;gap:.15rem}
+  .detail dt,.facts dt{width:auto}
+  .ppanel{padding:1.25rem}
+  .ppanel-head h3{font-size:1.25rem}
+  .is-open .psum{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}

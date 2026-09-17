@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<title>포트폴리오</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="../style.css" rel="stylesheet">
+</head>
+<body>
+<div class="wrap" id="app"></div>
+
+<script>
+/* ============================================================
+   새 버전 템플릿. 이 폴더를 portfolio/<새 이름>/ 으로 복사한 뒤 이 객체만 채우면 됩니다.
+   (_template 폴더는 밑줄로 시작해 GitHub Pages에 공개되지 않습니다)
+   빈 문자열이나 빈 배열로 두면 그 줄 또는 섹션이 통째로 빠집니다.
+   ============================================================ */
+window.profile = {
+  name: "",                 // 예: "홍길동"
+  headline: "",             // 히어로 큰 문구. 줄바꿈은 화면 폭에 맞춰 자동 (\n을 넣으면 강제 줄바꿈)
+  tagline: "",              // 한 줄 소개
+  photo: "",                // 예: "../assets/me.jpg". 비우면 사진 칸 없이 표시
+
+  education: {
+    university: "",         // 학교, 학과, 졸업 연도
+    gpa: "",                // 예: "3.8 / 4.5"
+    highschool: ""          // 안 쓸 거면 빈 문자열
+  },
+  certificates: [],         // 히어로 학력 아래 "자격" 줄. 예: ["정보처리기사 · 2026.09"]
+  languages: [],            // 히어로 "어학" 줄. 예: ["OPIc IM2"]
+
+  // 섹션 순서. 인턴 경험을 앞세우려면 ["skills", "experience", "projects", "about"]
+  order: ["skills", "projects", "experience", "about"],
+
+  links: [
+    // { label: "GitHub", href: "", icon: "github" },   // icon을 빼면 글자 링크
+    // { label: "velog",  href: "", icon: "velog" },
+    // { label: "이력서 PDF", href: "" }
+  ],
+
+  skills: [                 // primary: true 면 색이 채워진 배지
+    // { group: "언어", items: [ { name: "", primary: true }, { name: "" } ] },
+    // { group: "프레임워크와 데이터베이스", items: [] },
+    // { group: "인프라와 협업", items: [] }
+  ],
+
+  experience: [
+    // {
+    //   company: "", role: "", period: "", team: "",
+    //   metric: { before: "", after: "", caption: "" },
+    //   details: [
+    //     { label: "한 일", text: "" },
+    //     { label: "협업 방식", text: "" },
+    //     { label: "배운 것", text: "" }
+    //   ]
+    // }
+  ],
+
+  projects: [
+    // {
+    //   title: "", summary: "", image: "",
+    //   details: [
+    //     { label: "기간과 규모", text: "" },
+    //     { label: "문제", text: "" },
+    //     { label: "접근", text: "" },
+    //     { label: "결과", text: "" },
+    //     { label: "돌아보면", text: "" }
+    //   ],
+    //   links: [ { label: "저장소", href: "" } ]
+    // }
+  ],
+
+  about: [
+    // { heading: "잘하는 것", text: "" },
+    // { heading: "보완하고 있는 것", text: "" },
+    // { heading: "일할 때 지키는 것", text: "" }
+  ],
+
+  email: "",                // 히어로 "메일" 줄
+  phone: "",                // 히어로 "전화" 줄. 비우면 줄이 빠짐
+
+  labels: {
+    skills: "쓸 줄 아는 것",
+    experience: "인턴 경험",
+    projects: "프로젝트",
+    about: "어떤 사람인가",
+    skillNote: "색이 채워진 것은 주력, 테두리만 있는 것은 써본 정도입니다."
+  }
+};
+</script>
+<script src="../render.js"></script>
+</body>
+</html>
